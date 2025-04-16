@@ -16,17 +16,27 @@
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @endif
     </head>
-    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-        <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
+<head>
+    <!-- ... -->
+
+    @fluxAppearance
+</head>
+<body>
+    <flux:header container class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700">
+        <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
+
+        <flux:brand href="#" logo="https://fluxui.dev/img/demo/dark-mode-logo.png" name="Acme Inc." class="max-lg:hidden! hidden dark:flex" />
+
+        <flux:navbar class="-mb-px max-lg:hidden">
+
             @if (Route::has('login'))
-                <nav class="flex items-center justify-end gap-4">
                     @auth
                         <a
                             href="{{ url('/dashboard') }}"
                             class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
                         >
-                            Dashboard
                         </a>
+            <flux:navbar.item icon="home" href="#" current>Dashboard</flux:navbar.item>
                     @else
                         <a
                             href="{{ route('login') }}"
@@ -45,129 +55,84 @@
                     @endauth
                 </nav>
             @endif
-        </header>
 
+            <flux:navbar.item icon="inbox" badge="12" href="#">Inbox</flux:navbar.item>
+            <flux:navbar.item icon="document-text" href="#">Documents</flux:navbar.item>
+            <flux:navbar.item icon="calendar" href="#">Calendar</flux:navbar.item>
 
-        <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
-            <main class="flex max-w-[935px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
-                <div class="text-[13px] leading-[20px] flex-1 p-6 pb-12 lg:p-20 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
-                    <h1 class="mb-1 font-medium">Let's get started</h1>
-  <!-- Sidebar -->
-  <aside class="w-64 min-h-screen bg-indigo-700 text-white p-6 hidden md:block fixed">
-    <h2 class="text-2xl font-bold mb-6">Mariela AI</h2>
-    <nav class="space-y-4">
-      <a href="#home" class="block hover:text-indigo-300">Home</a>
-      <a href="#services" class="block hover:text-indigo-300">Services</a>
-      <a href="#contact" class="block hover:text-indigo-300">Contact</a>
-    </nav>
-  </aside>
+            <flux:separator vertical variant="subtle" class="my-2"/>
 
-  <!-- Main Content -->
-  <main class="flex-1 ml-0 md:ml-64 p-8 space-y-20">
-    <!-- Hero Section -->
-    <section id="home" class="text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Websites & AI, Smart by Design</h1>
-      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        We create custom websites powered by artificial intelligence. Build your digital future with Mariela AI.
-      </p>
-    </section>
+            <flux:dropdown class="max-lg:hidden">
+                <flux:navbar.item icon:trailing="chevron-down">Favorites</flux:navbar.item>
 
-    <!-- Services Section -->
-    <section id="services">
-      <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2">Web Design</h3>
-          <p>Responsive, user-focused interfaces tailored to your brand and audience.</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2">AI Integration</h3>
-          <p>We connect your web platforms with AI tools to automate and optimize user experience.</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2">Ongoing Maintenance</h3>
-          <p>Keep your website secure, fast, and up-to-date with our continuous support plans.</p>
-        </div>
-      </div>
-    </section>
+                <flux:navmenu>
+                    <flux:navmenu.item href="#">Marketing site</flux:navmenu.item>
+                    <flux:navmenu.item href="#">Android app</flux:navmenu.item>
+                    <flux:navmenu.item href="#">Brand guidelines</flux:navmenu.item>
+                </flux:navmenu>
+            </flux:dropdown>
+        </flux:navbar>
 
-    <!-- Contact Section -->
-    <section id="contact" class="text-center">
-      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-      <p class="mb-4 text-gray-600 dark:text-gray-400">Have a project in mind? Let’s talk!</p>
-      <a href="mailto:contact@marielaai.com" class="inline-block bg-indigo-700 text-white px-6 py-3 rounded-full hover:bg-indigo-600 transition">
-        contact@marielaai.com
-      </a>
-    </section>
-  </main>
-                    <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">Mariela AI is a groupof profesional espcialiced in make websiteswith artificial intelligence applied <br>We suggest starting with the following.</p>
-                    <ul class="flex flex-col mb-4 lg:mb-6">
-                        <li class="flex items-center gap-4 py-2 relative before:border-l before:border-[#e3e3e0] dark:before:border-[#3E3E3A] before:top-1/2 before:bottom-0 before:left-[0.4rem] before:absolute">
-                            <span class="relative py-1 bg-white dark:bg-[#161615]">
-                                <span class="flex items-center justify-center rounded-full bg-[#FDFDFC] dark:bg-[#161615] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)] w-3.5 h-3.5 border dark:border-[#3E3E3A] border-[#e3e3e0]">
-                                    <span class="rounded-full bg-[#dbdbd7] dark:bg-[#3E3E3A] w-1.5 h-1.5"></span>
-                                </span>
-                            </span>
-                            <span>
-                                Read the
-                                <a href="https://laravel.com/docs" target="_blank" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] ml-1">
-                                    <span>Documentation</span>
-                                    <svg
-                                        width="10"
-                                        height="11"
-                                        viewBox="0 0 10 11"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="w-2.5 h-2.5"
-                                    >
-                                        <path
-                                            d="M7.70833 6.95834V2.79167H3.54167M2.5 8L7.5 3.00001"
-                                            stroke="currentColor"
-                                            stroke-linecap="square"
-                                        />
-                                    </svg>
-                                </a>
-                            </span>
-                        </li>
-                        <li class="flex items-center gap-4 py-2 relative before:border-l before:border-[#e3e3e0] dark:before:border-[#3E3E3A] before:bottom-1/2 before:top-0 before:left-[0.4rem] before:absolute">
-                            <span class="relative py-1 bg-white dark:bg-[#161615]">
-                                <span class="flex items-center justify-center rounded-full bg-[#FDFDFC] dark:bg-[#161615] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)] w-3.5 h-3.5 border dark:border-[#3E3E3A] border-[#e3e3e0]">
-                                    <span class="rounded-full bg-[#dbdbd7] dark:bg-[#3E3E3A] w-1.5 h-1.5"></span>
-                                </span>
-                            </span>
-                            <span>
-                                Watch video tutorials at
-                                <a href="https://laracasts.com" target="_blank" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] ml-1">
-                                    <span>Laracasts</span>
-                                    <svg
-                                        width="10"
-                                        height="11"
-                                        viewBox="0 0 10 11"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="w-2.5 h-2.5"
-                                    >
-                                        <path
-                                            d="M7.70833 6.95834V2.79167H3.54167M2.5 8L7.5 3.00001"
-                                            stroke="currentColor"
-                                            stroke-linecap="square"
-                                        />
-                                    </svg>
-                                </a>
-                            </span>
-                        </li>
-                    </ul>
-                    <ul class="flex gap-3 text-sm leading-normal">
-                        <li>
-                            <a href="https://cloud.laravel.com" target="_blank" class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
-                                Deploy now
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                </div>
-            </main>
-        </div>
+        <flux:spacer />
+
+        <flux:navbar class="me-4">
+            <flux:navbar.item icon="magnifying-glass" href="#" label="Search" />
+            <flux:navbar.item class="max-lg:hidden" icon="cog-6-tooth" href="#" label="Settings" />
+            <flux:navbar.item class="max-lg:hidden" icon="information-circle" href="#" label="Help" />
+        </flux:navbar>
+
+        <flux:dropdown position="top" align="start">
+            <flux:profile avatar="https://fluxui.dev/img/demo/user.png" />
+
+            <flux:menu>
+                <flux:menu.radio.group>
+                    <flux:menu.radio checked>Olivia Martin</flux:menu.radio>
+                    <flux:menu.radio>Truly Delta</flux:menu.radio>
+                </flux:menu.radio.group>
+
+                <flux:menu.separator />
+
+                <flux:menu.item icon="arrow-right-start-on-rectangle">Logout</flux:menu.item>
+            </flux:menu>
+        </flux:dropdown>
+    </flux:header>
+
+    <flux:sidebar stashable sticky class="lg:hidden bg-zinc-50 dark:bg-zinc-900 border rtl:border-r-0 rtl:border-l border-zinc-200 dark:border-zinc-700">
+        <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
+
+        <flux:brand href="#" logo="https://fluxui.dev/img/demo/logo.png" name="Acme Inc." class="px-2 dark:hidden" />
+        <flux:brand href="#" logo="https://fluxui.dev/img/demo/dark-mode-logo.png" name="Acme Inc." class="px-2 hidden dark:flex" />
+
+        <flux:navlist variant="outline">
+            <flux:navlist.item icon="home" href="#" current>Home</flux:navlist.item>
+            <flux:navlist.item icon="inbox" badge="12" href="#">Inbox</flux:navlist.item>
+            <flux:navlist.item icon="document-text" href="#">Documents</flux:navlist.item>
+            <flux:navlist.item icon="calendar" href="#">Calendar</flux:navlist.item>
+
+            <flux:navlist.group expandable heading="Favorites" class="max-lg:hidden">
+                <flux:navlist.item href="#">Marketing site</flux:navlist.item>
+                <flux:navlist.item href="#">Android app</flux:navlist.item>
+                <flux:navlist.item href="#">Brand guidelines</flux:navlist.item>
+            </flux:navlist.group>
+        </flux:navlist>
+
+        <flux:spacer />
+
+        <flux:navlist variant="outline">
+            <flux:navlist.item icon="cog-6-tooth" href="#">Settings</flux:navlist.item>
+            <flux:navlist.item icon="information-circle" href="#">Help</flux:navlist.item>
+        </flux:navlist>
+    </flux:sidebar>
+
+    <flux:main container>
+        <flux:heading size="xl" level="1">Good afternoon, Olivia</flux:heading>
+
+        <flux:text class="mt-2 mb-6 text-base">Here's what's new today</flux:text>
+
+        <flux:separator variant="subtle" />
+    </flux:main>
+
+    @fluxScripts
 
         @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>
