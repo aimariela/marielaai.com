@@ -10,13 +10,14 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="assest(public/favicon-16x16.png" type="image/x-icon">
 
     @fluxAppearance
 
   </head>
-  @fluxScripts
+
 	<body>
+
     <flux:header container class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700">
 
     <flux:navbar class="-mb-px">
@@ -68,5 +69,6 @@
 <div class="container">
 @yield('content')
 </div>
+@fluxScripts
 	</body>
 </html>
