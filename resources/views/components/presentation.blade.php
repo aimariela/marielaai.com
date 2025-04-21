@@ -2,7 +2,7 @@
     <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-24 gap-y-10">
             <div>
-                <img class="object-cover w-16 h-16 rounded-full" src="@asset('public/assets/img/LOGO.png').png" alt="" />
+                <img class="object-cover w-16 h-16 rounded-full" src="assets/img/LOGO.png" alt="" />
                 <blockquote>
                     <p class="mt-6 text-xl leading-relaxed text-black">“ Whether you're launching a new brand or optimizing an existing platform, we bring innovation and strategy together to turn your vision into reality.
                         Let us help you build smarter, faster, and more impactful web experiences.”</p>

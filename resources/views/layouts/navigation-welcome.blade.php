@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link rel="icon" href="@asset(public/favicon-16x16.png)" type="image/x-icon">
+        <link rel="icon" href="favicon-16x16.png" type="image/x-icon">
 
     @fluxAppearance
 
