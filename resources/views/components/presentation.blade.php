@@ -1,4 +1,4 @@
-<section class="py-10 bg-gray-100 dark:bg-zinc-900 sm:py-16 lg:py-24">
+<section class="py-10 bg-gray-100 dark:bg-zinc-300 sm:py-16 lg:py-24">
     <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-24 gap-y-10">
             <div>
@@ -8,11 +8,11 @@
                         Let us help you build smarter, faster, and more impactful web experiences.”</p>
                 </blockquote>
                 <p class="mt-6 text-base font-semibold text-black">Mariela AI</p>
-                <p class="mt-1 text-base text-gray-600">Werb sites and AI</p>
+                <p class="mt-1 text-base text-gray-600">Web sites and AI</p>
             </div>
 
             <div>
-                <div class="overflow-hidden bg-white">
+                <div class="overflow-hidden dark:bg-zinc-400">
                     <div class="p-8 lg:px-12 lg:py-10">
                         <h3 class="text-2xl font-semibold text-black">Welcome to Mariela AI</h3>
                         <p class="mt-4 text-base text-gray-600">At Mariela AI, we specialize in designing and developing intelligent websites that elevate your digital presence.
