@@ -19,11 +19,11 @@
                             We merge elegant user interfaces with the power of artificial intelligence to create personalized, automated, and scalable solutions.
                           </p></p>
 
-                        <a href="#" title="" class="flex items-center justify-center w-full px-4 py-4 mt-8 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border-2 border-transparent rounded-md hover:bg-blue-700 focus:bg-blue-700" role="button">
+                        <a href="{{ route('assitant') }}" title="" class="flex items-center justify-center w-full px-4 py-4 mt-8 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border-2 border-transparent rounded-md hover:bg-blue-700 focus:bg-blue-700" role="button">
                             Create your first website
                         </a>
 
-                        <a href="#" title="" class="flex items-center justify-center w-full px-4 py-4 mt-4 text-base font-semibold text-black transition-all duration-200 bg-transparent border-2 border-black rounded-md hover:bg-black focus:bg-black hover:text-white focus:text-white" role="button">
+                        <a href="https://contact.marielaai.com" title="" class="flex items-center justify-center w-full px-4 py-4 mt-4 text-base font-semibold text-black transition-all duration-200 bg-transparent border-2 border-black rounded-md hover:bg-black focus:bg-black hover:text-white focus:text-white" role="button">
                             Contact Us
                         </a>
                     </div>

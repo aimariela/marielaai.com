@@ -10,6 +10,10 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        {{-- Incluir CSS de Vite --}}
+        @vite('resources/css/app.css')
+        {{-- Incluir JavaScript de Vite --}}
+        @vite('resources/js/app.js')
         <link rel="icon" href="public/favicon-16x16.png" type="image/x-icon">
 
     @fluxAppearance
@@ -45,24 +49,20 @@
         @endif
 
         <flux:separator vertical variant="subtle" class="my-2"/>
+        <flux:spacer />
+        
+        <flux:navbar class="me-4">
+            <flux:navbar.item icon="magnifying-glass" href="#" label="Search" />
+        </flux:navbar>
 
         <flux:dropdown class="max-lg:hidden">
             <flux:navbar.item icon:trailing="chevron-down">Favorites</flux:navbar.item>
 
             <flux:navmenu>
-                <flux:navmenu.item href="#">Marketing site</flux:navmenu.item>
-                <flux:navmenu.item href="#">Android app</flux:navmenu.item>
-                <flux:navmenu.item href="#">Brand guidelines</flux:navmenu.item>
+                <flux:navmenu.item href="https://shop.marielaai.com">SHOP</flux:navmenu.item>
+                <flux:navmenu.item href="{{ route('assistant') }}">Assitant AI</flux:navmenu.item>
             </flux:navmenu>
         </flux:dropdown>
-    </flux:navbar>
-
-    <flux:spacer />
-
-    <flux:navbar class="me-4">
-        <flux:navbar.item icon="magnifying-glass" href="#" label="Search" />
-        <flux:navbar.item class="max-lg:hidden" icon="cog-6-tooth" href="#" label="Settings" />
-        <flux:navbar.item class="max-lg:hidden" icon="information-circle" href="#" label="Help" />
     </flux:navbar>
 
 </flux:header>
