@@ -6,8 +6,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () { return view('welcome');
 });
 
-Route::get('/assistant', function () { return view('assistant')->name('assistant');
-});
+// Add your routes here
+Route::get('/assistant', function () {
+    return view('assistant');
+})->name('assistant');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
