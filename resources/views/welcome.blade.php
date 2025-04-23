@@ -1,4 +1,4 @@
-@include('layouts.navigation-welcome')
+@extends('layouts.navigation-welcome')
 @section('content')
     <flux:main container>
         <flux:heading size="xl" level="1">Welcome to Mariela AI</flux:heading>
