@@ -1,5 +1,4 @@
-@extends('layouts.navigation-welcome')	
-@section('content')
+<x-navigation-welcome-layout>
 
     <flux:main container>
         <flux:heading size="xl" level="1">Welcome to Mariela AI</flux:heading>
@@ -10,10 +9,7 @@
         <x-presentation />
         <flux:separator variant="subtle" class="mt-6" />
     </flux:main>
-
-
-
         @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>
         @endif
-@endsection
+</x-navigation-welcome-layout>
