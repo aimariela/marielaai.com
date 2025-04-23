@@ -1,5 +1,4 @@
 @extends('layouts.navigation-welcome')
-<x-flux.sidebar />
 @section('content')
     <flux:main container>
         <flux:heading size="xl" level="1">Welcome to Mariela AI</flux:heading>

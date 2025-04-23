@@ -79,5 +79,3 @@
 
         <flux:separator variant="subtle" />
     </flux:main>
-
-    @fluxScripts
