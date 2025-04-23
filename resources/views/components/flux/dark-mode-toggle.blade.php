@@ -1,8 +1,5 @@
-{{-- Botón Flux con icono que viene en la librería --}}
-<flux:button
-    x-data
-    x-on:click="$flux.dark = ! $flux.dark"
-    icon="moon"
-    variant="subtle"
-    aria-label="Cambiar a modo oscuro / claro"
-/>
+<flux:radio.group x-data x-model="$flux.appearance">
+    <flux:radio value="light">Light</flux:radio>
+    <flux:radio value="dark">Dark</flux:radio>
+    <flux:radio value="system">System</flux:radio>
+</flux:radio.group>
