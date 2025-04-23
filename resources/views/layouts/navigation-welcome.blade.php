@@ -64,7 +64,7 @@
 
 </flux:header>
 <div class="container">
-    {{ $slot }}
+  @yield('content')
 </div>
 @fluxScripts
 	</body>
